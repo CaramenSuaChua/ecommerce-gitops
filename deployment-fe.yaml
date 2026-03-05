@@ -23,7 +23,7 @@ spec:
       namespace: ecommerce
     spec:
       containers:
-        - image: caramensuachua/ecommerce-frontend:v33
+        - image: caramensuachua/ecommerce-frontend:v34
           imagePullPolicy: Always
           name: ecommerce-frontend
           ports:
