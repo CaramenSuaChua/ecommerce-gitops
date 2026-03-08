@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-backend-service
+  namespace: ecommerce
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: tcp
+      port: {{ .Values.backend.service.port }}
+      protocol: TCP
+      targetPort: {{ .Values.backend.service.targetPort }}
+  selector:
+    app: ecommerce-backend
+  sessionAffinity: None
+  type: {{.Values.backend.service.type}}
