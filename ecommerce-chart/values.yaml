@@ -6,7 +6,7 @@ frontend:
   replicaCount: 3
   image:
     repository: caramensuachua/ecommerce-frontend
-    tag: v34
+    tag: 7acba7a
     pullPolicy: Always
   service:
     type: ClusterIP
