@@ -27,7 +27,7 @@ spec:
             - secretRef:
                 name: {{ .Release.Name }}-backend-secret
                 optional: false
-          image: caramensuachua/ecommerce-backend:v2
+          image: {{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}
           imagePullPolicy: Always
           name: {{ .Release.Name }}-backend
           ports:
