@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: {{ .Values.backend.name }}
-  name: {{ .Values.backend.name }}-deployment
+  name: {{ .Values.backend.name }}-backend-deployment
   namespace: ecommerce
 spec:
   replicas: {{ .Values.backend.replicaCount}}
