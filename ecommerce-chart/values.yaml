@@ -1,0 +1,52 @@
+
+namespace: ecommerce
+
+frontend:
+  enabled: true
+  replicaCount: 3
+  image:
+    repository: caramensuachua/ecommerce-frontend
+    tag: v34
+    pullPolicy: Always
+  service:
+    type: ClusterIP
+    port: 80
+  ingress:
+    enabled: true
+    className: nginx
+    host: ecommerce.devopsedu.vn
+    port: 80
+
+
+backend:
+  enabled: true
+  replicaCount: 3
+  image:
+    repository: caramensuachua/ecommerce-backend
+    tag: v2
+    pullPolicy: Always
+  service:
+    type: ClusterIP
+    port: 8080
+  ingress:
+    enabled: true
+    className: nginx
+    host: api-ecommerce.devopsedu.vn
+    port: 8080
+  config:
+    applicationProperties: |-
+      spring.datasource.url=jdbc:mysql://${MARIADB_HOST}:${MARIADB_PORT}/${MARIADB_DB}
+      spring.datasource.username=${MARIADB_USERNAME}
+      spring.datasource.password=${MARIADB_PASSWORD}
+      spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+      spring.datasource.sql-script-encoding=UTF-8
+      spring.jpa.properties.hibernate.globally_quoted_i/dentifiers=true
+      spring.jpa.hibernate.ddl-auto=none
+      spring.jpa.show-sql=true
+      spring.jpa.properties.hibernate.format_sql=true
+      spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+      spring.data.rest.base-path=/api
+      allowed.origins=http://ecommerce.devopsedu.vn
+      spring.data.rest.detection-strategy=ANNOTATED
+      okta.oauth2.client-id=0oab0lzwjoN1Rjsar5d7
+      okta.oauth2.issuer=https://dev-82108115.okta.com/oauth2/default
