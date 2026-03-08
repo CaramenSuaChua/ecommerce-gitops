@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: ecommerce-frontend
-  name: {{ .Release.Name }}-deployment
+  name: {{ .Release.Name }}-frontend-deployment
   namespace: ecommerce
 spec:
   replicas: {{ .Values.frontend.replicaCount }}
