@@ -2,15 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: ecommerce-backend
-  name: ecommerce-backend-deployment
+    app: {{ .Values.backend.name }}
+  name: {{ .Values.backend.name }}-deployment
   namespace: ecommerce
 spec:
   replicas: {{ .Values.backend.replicaCount}}
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: ecommerce-backend
+      app: {{ .Values.backend.name }}
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -19,17 +19,17 @@ spec:
   template:
     metadata:
       labels:
-        app: ecommerce-backend
+        app: {{ .Values.backend.name }}
       namespace: ecommerce
     spec:
       containers:
         - envFrom:
             - secretRef:
-                name: ecommerce-backend-applation-properties-secret
+                name: {{ .Values.backend.name }}-application-properties-secret
                 optional: false
           image: caramensuachua/ecommerce-backend:v2
           imagePullPolicy: Always
-          name: ecommerce-backend
+          name: {{ .Values.backend.name }}
           ports:
             - containerPort: 8080
               name: tcp

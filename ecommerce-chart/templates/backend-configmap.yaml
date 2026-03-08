@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ecommerce-backend-application-properties-configmap
+  namespace: ecommerce
+data:
+  # Sử dụng hàm nindent để đảm bảo thụt lề chuẩn cho khối String
+  application.properties: |
+{{ .Values.backend.config.applicationProperties | nindent 4 }}
