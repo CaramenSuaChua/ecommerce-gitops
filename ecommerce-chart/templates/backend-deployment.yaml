@@ -25,7 +25,7 @@ spec:
       containers:
         - envFrom:
             - secretRef:
-                name: {{ .Release.Name }}-backend-application-properties-secret
+                name: {{ .Release.Name }}-backend-secret
                 optional: false
           image: caramensuachua/ecommerce-backend:v2
           imagePullPolicy: Always
