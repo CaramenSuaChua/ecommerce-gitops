@@ -49,7 +49,6 @@ backend:
       allowed.origins=http://ecommerce.devopsedu.vn
       spring.data.rest.detection-strategy=ANNOTATED
       okta.oauth2.client-id=0oab0lzwjoN1Rjsar5d7
-      okta.oauth2.issuer=https://dev-82108115.okta.com/oauth2/default
   secrets:
     MARIADB_DB: ZnVsbC1zdGFjay1lY29tbWVyY2U=
     MARIADB_HOST: ZGF0YWJhc2UtZGUxNTAuYzU0bWFpY3dvODhsLmFwLXNvdXRoZWFzdC0xLnJkcy5hbWF6b25hd3MuY29t
