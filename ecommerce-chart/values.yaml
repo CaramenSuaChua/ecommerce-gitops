@@ -34,7 +34,7 @@ backend:
     host: api-ecommerce.devopsedu.vn
     port: 8080
   config:
-    applicationProperties: |-
+    applicationProperties: >
       spring.datasource.url=jdbc:mysql://${MARIADB_HOST}:${MARIADB_PORT}/${MARIADB_DB}
       spring.datasource.username=${MARIADB_USERNAME}
       spring.datasource.password=${MARIADB_PASSWORD}
@@ -51,8 +51,8 @@ backend:
       okta.oauth2.client-id=0oab0lzwjoN1Rjsar5d7
       okta.oauth2.issuer=https://dev-82108115.okta.com/oauth2/default
   secrets:
-    dbName: ZnVsbC1zdGFjay1lY29tbWVyY2U=
-    dbHost: ZGF0YWJhc2UtZGUxNTAuYzU0bWFpY3dvODhsLmFwLXNvdXRoZWFzdC0xLnJkcy5hbWF6b25hd3MuY29t
-    dbPassword: TnRkMzQyMDAw
-    dbPort: MzMwNg==
-    dbUsername: YWRtaW4=
+    MARIADB_DB: ZnVsbC1zdGFjay1lY29tbWVyY2U=
+    MARIADB_HOST: ZGF0YWJhc2UtZGUxNTAuYzU0bWFpY3dvODhsLmFwLXNvdXRoZWFzdC0xLnJkcy5hbWF6b25hd3MuY29t
+    MARIADB_PASSWORD: TnRkMzQyMDAw
+    MARIADB_PORT: MzMwNg==
+    MARIADB_USERNAME: YWRtaW4=
