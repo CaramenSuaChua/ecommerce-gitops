@@ -5,6 +5,8 @@ metadata:
   namespace: ecommerce
 data:
   # Sử dụng hàm nindent để đảm bảo thụt lề chuẩn cho khối String
-  application.properties: |
-{{ .Files.Get "configs/application.properties" | indent 4 }}
+  application-cam.properties: |-
+    {{- with .Files.Get "config/application.properties" }}
+    {{ . | nindent 4 }}
+    {{- end }}
 #.ss
