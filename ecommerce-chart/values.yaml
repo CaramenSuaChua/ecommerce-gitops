@@ -23,7 +23,7 @@ backend:
   replicaCount: 3
   image:
     repository: caramensuachua/ecommerce-backend
-    tag: 5e9c756
+    tag: 3fedde7
     pullPolicy: Always
   service:
     type: ClusterIP
