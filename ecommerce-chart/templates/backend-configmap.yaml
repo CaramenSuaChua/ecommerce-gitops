@@ -6,5 +6,5 @@ metadata:
 data:
   # Sử dụng hàm nindent để đảm bảo thụt lề chuẩn cho khối String
   application.properties: |
-{{ .Files.Get "configs/backend-properties.txt" | indent 4 }}
+{{ .Files.Get "configs/application.properties" | indent 4 }}
 #.ss
