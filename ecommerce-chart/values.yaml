@@ -62,7 +62,6 @@ monitoring:
     pvcName: monitoring-pvc
     capacity: 10Gi
     requestCapacity: 5Gi
-    accessModes:
-      - ReadWriteOnce
+    accessModes: ReadWriteOnce
     nfsPath: /data/monitoring
     nfsServer: "46.137.223.86"
