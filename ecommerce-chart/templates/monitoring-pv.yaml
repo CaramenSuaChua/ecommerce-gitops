@@ -1,0 +1,15 @@
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Values.monitoring.storage.name }}
+spec:
+  capacity:
+    storage: {{ .Values.monitoring.storage.capacity }}
+  accessModes:
+    - {{ .Values.monitoring.storage.accessModes }}
+  nfs:
+    path: {{ .Values.monitoring.storage.nfsPath }}
+    server: {{ .Values.monitoring.storage.nfsServer }}
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: {{ .Values.monitoring.storage.className }}
