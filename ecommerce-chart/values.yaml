@@ -53,3 +53,16 @@ backend:
     requests:
       cpu: 200m
       memory: 350Mi
+
+monitoring:
+  storage:
+    enabled: true
+    className: nfs-storage
+    pvName: monitoring-pv
+    pvcName: monitoring-pvc
+    capacity: 10Gi
+    requestCapacity: 5Gi
+    accessModes:
+      - ReadWriteOnce
+    nfsPath: /data/monitoring
+    nfsServer: "46.137.223.86"
