@@ -65,3 +65,56 @@ monitoring:
     accessModes: ReadWriteOnce
     nfsPath: /data/monitoring
     nfsServer: "46.137.223.86"
+  
+  storage:
+    className: nfs-storage
+    capacity: 10Gi
+    accessMode: ReadWriteOnce
+    nfsServer: "46.137.223.86"
+    # Danh sách các PV cần tạo
+    volumes:
+      - name: monitoring-pv-prometheus
+        nfsPath: "/data/monitoring/prometheus"
+      - name: monitoring-pv-grafana
+        nfsPath: "/data/monitoring/grafana"
+
+  
+prometheus:
+  prometheusSpec:
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: nfs-storage
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 10Gi
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+      - prometheus.devopsedu.vn
+    paths:
+      - /
+
+
+grafana:
+  enabled: true
+  persistence:
+    enabled: true
+    storageClassName: nfs-storage
+    size: 10Gi
+    type: pvc
+  # Sửa lỗi Permission trên NFS
+  initChownData:
+    enabled: false
+  podSecurityContext:
+    runAsUser: 0
+    runAsGroup: 0
+    fsGroup: 0
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+      - grafana.devopsedu.vn
+    path: /
