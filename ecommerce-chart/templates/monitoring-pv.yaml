@@ -13,3 +13,21 @@ spec:
     server: {{ .Values.monitoring.storage.nfsServer }}
   persistentVolumeReclaimPolicy: Retain
   storageClassName: {{ .Values.monitoring.storage.className }}
+
+{{- range .Values.monitoring.storage.volumes }}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .name }}
+spec:
+  capacity:
+    storage: {{ $.Values.monitoring.storage.capacity }}
+  accessModes:
+    - {{ $.Values.monitoring.storage.accessMode }}
+  nfs:
+    path: {{ .nfsPath }}
+    server: {{ $.Values.monitoring.storage.nfsServer }}
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: {{ $.Values.monitoring.storage.className }}
+{{- end }}
