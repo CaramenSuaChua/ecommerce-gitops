@@ -64,13 +64,13 @@ monitoring:
     requestCapacity: 5Gi
     accessModes: ReadWriteOnce
     nfsPath: /data/monitoring
-    nfsServer: "46.137.223.86"
+    nfsServer: "10.10.10.226"
   
   storage:
     className: nfs-storage
     capacity: 10Gi
     accessMode: ReadWriteOnce
-    nfsServer: "46.137.223.86"
+    nfsServer: "10.10.10.226"
     # Danh sách các PV cần tạo
     volumes:
       - name: monitoring-pv-prometheus
