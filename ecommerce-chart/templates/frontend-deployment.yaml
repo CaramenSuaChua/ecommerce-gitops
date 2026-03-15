@@ -22,6 +22,8 @@ spec:
         app: ecommerce-frontend
       namespace: ecommerce
     spec:
+      imagePullSecrets:
+        - name: ecr-registry-helper
       containers:
         - image: {{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}
           imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
