@@ -30,7 +30,7 @@ backend:
   replicaCount: 3
   image:
     repository: 573051981771.dkr.ecr.ap-southeast-1.amazonaws.com/de150/ecommerce-backend
-    tag: 689a1d4
+    tag: a6de926
     pullPolicy: Always
   service:
     type: ClusterIP
