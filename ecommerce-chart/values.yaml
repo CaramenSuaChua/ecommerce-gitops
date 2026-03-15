@@ -5,8 +5,8 @@ frontend:
   enabled: true
   replicaCount: 3
   image:
-    repository: caramensuachua/ecommerce-frontend
-    tag: fcaa81d
+    repository: 573051981771.dkr.ecr.ap-southeast-1.amazonaws.com/de150/ecommerce-frontend
+    tag: 1f411ff
     pullPolicy: Always
   service:
     type: ClusterIP
