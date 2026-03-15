@@ -10,7 +10,7 @@ frontend:
   replicaCount: 3
   image:
     repository: 573051981771.dkr.ecr.ap-southeast-1.amazonaws.com/de150/ecommerce-frontend
-    tag: 86c5883
+    tag: 187d9c5
     pullPolicy: Always
   imagePullSecrets:
     - name: ecr-registry-helper
