@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-backend-application-properties-configmap
+  namespace: {{ .Values.namespace }}
+data:
+  application.properties: |-
+    {{- with .Files.Get "config/application.properties" }}
+      {{ . | nindent 4 }}
+    {{- end }}
