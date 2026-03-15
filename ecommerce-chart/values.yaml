@@ -6,7 +6,7 @@ frontend:
   replicaCount: 3
   image:
     repository: 573051981771.dkr.ecr.ap-southeast-1.amazonaws.com/de150/ecommerce-frontend
-    tag: 1f411ff
+    tag: 86c5883
     pullPolicy: Always
   service:
     type: ClusterIP
