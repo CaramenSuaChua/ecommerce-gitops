@@ -13,7 +13,7 @@ frontend:
     minReplicas: 2
   image:
     repository: 573051981771.dkr.ecr.ap-southeast-1.amazonaws.com/de150/ecommerce-frontend
-    tag: bc29808
+    tag: 0e3354f
     pullPolicy: Always
   imagePullSecrets:
     - name: ecr-registry-helper
