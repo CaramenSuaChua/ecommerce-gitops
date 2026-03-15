@@ -58,24 +58,16 @@ monitoring:
   storage:
     enabled: true
     className: nfs-storage
-    pvName: monitoring-pv
-    pvcName: monitoring-pvc
+    nfsServer: "46.137.223.86"
     capacity: 10Gi
-    requestCapacity: 5Gi
     accessModes: ReadWriteOnce
-    nfsPath: /data/monitoring
-    nfsServer: "10.10.10.226"
-  
-  storage:
-    className: nfs-storage
-    capacity: 10Gi
-    accessMode: ReadWriteOnce
-    nfsServer: "10.10.10.226"
-    # Danh sách các PV cần tạo
+    # Danh sách các bản ghi PV/PVC cần tạo
     volumes:
       - name: monitoring-pv-prometheus
+        pvcName: monitoring-pvc-prometheus
         nfsPath: "/data/monitoring/prometheus"
       - name: monitoring-pv-grafana
+        pvcName: monitoring-pvc-grafana
         nfsPath: "/data/monitoring/grafana"
 
   
