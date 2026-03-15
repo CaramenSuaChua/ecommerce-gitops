@@ -22,6 +22,8 @@ spec:
         app: {{ .Release.Name }}-backend
       namespace: ecommerce
     spec:
+      imagePullSecrets:
+        - name: ecr-registry-helper
       containers:
         - envFrom:
             - secretRef:
