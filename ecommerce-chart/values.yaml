@@ -29,8 +29,8 @@ backend:
   enabled: true
   replicaCount: 3
   image:
-    repository: caramensuachua/ecommerce-backend
-    tag: 63cf210
+    repository: 573051981771.dkr.ecr.ap-southeast-1.amazonaws.com/de150/ecommerce-backend
+    tag: de150/ecommerce-backend
     pullPolicy: Always
   service:
     type: ClusterIP
