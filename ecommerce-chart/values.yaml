@@ -8,6 +8,9 @@ global:
 frontend:
   enabled: true
   replicaCount: 3
+  autoscaling:
+    maxReplicas: 5
+    minReplicas: 2
   image:
     repository: 573051981771.dkr.ecr.ap-southeast-1.amazonaws.com/de150/ecommerce-frontend
     tag: 187d9c5
@@ -34,6 +37,9 @@ frontend:
 backend:
   enabled: true
   replicaCount: 3
+  autoscaling:
+    maxReplicas: 5
+    minReplicas: 2
   image:
     repository: 573051981771.dkr.ecr.ap-southeast-1.amazonaws.com/de150/ecommerce-backend
     tag: 55cf860
