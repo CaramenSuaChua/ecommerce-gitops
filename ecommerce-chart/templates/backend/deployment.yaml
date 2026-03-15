@@ -4,7 +4,7 @@ metadata:
   labels:
     app: {{ .Release.Name }}-backend
   name: {{ .Release.Name }}-backend-deployment
-  namespace: ecommerce
+  namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.backend.replicaCount}}
   revisionHistoryLimit: 10
