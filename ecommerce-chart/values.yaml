@@ -36,7 +36,7 @@ backend:
   replicaCount: 3
   image:
     repository: 573051981771.dkr.ecr.ap-southeast-1.amazonaws.com/de150/ecommerce-backend
-    tag: a6de926
+    tag: 55cf860
     pullPolicy: Always
   imagePullSecrets:
     - name: ecr-registry-helper
