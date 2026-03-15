@@ -5,6 +5,4 @@ metadata:
   namespace: {{ .Values.namespace }}
 data:
   application.properties: |-
-    {{- with .Files.Get "config/application.properties" }}
-      {{ . | nindent 4 }}
-    {{- end }}
+{{ .Files.Get "config/application.properties" | nindent 4 }}
